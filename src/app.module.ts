@@ -4,6 +4,9 @@ import { AppService } from './services/app.service';
 import { MongooseModule } from '@nestjs/mongoose';
 import { memberSchema } from './schemas/member.schema';
 import { AccountController } from './controller/account.controller';
+import { DBAuthenService } from './services/dbauthen.service';
+import { accessTokenSchema } from './schemas/access-token.schema';
+
 
 
 @Module({
@@ -12,10 +15,15 @@ import { AccountController } from './controller/account.controller';
     MongooseModule.forFeature([
 
       { name: 'Member', schema: memberSchema },
+      { name: 'AcessToken', schema: accessTokenSchema },
+
     ])
   ],
-  controllers: [AppController,
+  controllers: [
+    AppController,
     AccountController],
-  providers: [AppService],
+  providers: [
+    AppService,
+    DBAuthenService]
 })
 export class AppModule { }
