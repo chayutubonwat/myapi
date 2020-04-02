@@ -6,6 +6,8 @@ import { memberSchema } from './schemas/member.schema';
 import { AccountController } from './controller/account.controller';
 import { DBAuthenService } from './services/dbauthen.service';
 import { accessTokenSchema } from './schemas/access-token.schema';
+import { JwtAuthenService } from './services/jwtauthen.service';
+import { MemberController } from './controller/member.controller';
 
 
 
@@ -21,9 +23,13 @@ import { accessTokenSchema } from './schemas/access-token.schema';
   ],
   controllers: [
     AppController,
-    AccountController],
+    AccountController,
+    MemberController
+  ],
   providers: [
     AppService,
-    DBAuthenService]
+    DBAuthenService,
+    JwtAuthenService
+  ]
 })
 export class AppModule { }

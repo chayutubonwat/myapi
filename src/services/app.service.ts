@@ -5,6 +5,7 @@ import { IMemberDocument } from 'src/interfaces/member.interface';
 import { IRegister, IAccount, RoleAccount, ILogin } from 'src/interfaces/app.interface';
 import { generate, verify } from 'password-hash';
 import { DBAuthenService } from './dbauthen.service';
+import { JwtAuthenService } from './jwtauthen.service';
 
 @Injectable()
 export class AppService {

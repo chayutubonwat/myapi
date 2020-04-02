@@ -4,9 +4,10 @@ import { InjectModel } from "@nestjs/mongoose";
 import { IAccessTokenDocument } from "src/interfaces/access-token.interface";
 import { Model } from "mongoose";
 import { IMemberDocument } from "src/interfaces/member.interface";
+import { IAuthen } from "src/interfaces/authen.interface";
 
 @Injectable()
-export class DBAuthenService {
+export class DBAuthenService implements IAuthen {
 
     constructor(
         @InjectModel('AcessToken') private AccessTokenCollection: Model<IAccessTokenDocument>) { }
